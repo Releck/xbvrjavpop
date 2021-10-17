@@ -13,7 +13,8 @@ CHINESE_CASINOS = [
     'dioguitar23.net',
     'fengniao151.vip',
     'fbfb.me',
-    'bbs2048.org'
+    'bbs2048.org',
+    'fun2048.com'
 ]
 DELAY_SCRAPE_SECS = 5
 
@@ -22,7 +23,7 @@ def match_code(title):
     for c in CHINESE_CASINOS:
         if c in title:
             title = title.replace(c, '')
-    match = re.search(pattern='([a-zA-Z]{2,6}|3DSVR)[-]?([0-9]{2,5})', string=title)
+    match = re.search(pattern='([a-zA-Z]{2,6}|3DSVR|AVOPENVR)[-]?([0-9]{2,5})', string=title)
     if match:
         # DSVR-001 = 3DSVR-0001
         pfx = match.group(1).upper()
